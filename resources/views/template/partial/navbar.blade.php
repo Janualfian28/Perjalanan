@@ -5,7 +5,7 @@
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
                 <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#">Home</a></li>
                 <li class="nav-item px-2"><a class="nav-link" href="/profile/{{ auth()->user()->id }}">Profile</a></li>
-                <li class="nav-item px-2"><a class="nav-link" href="/">Log Out</a></li>
+                <li class="nav-item px-2"><a class="nav-link" href="/">Logout</a></li>
             </ul>
            
           </div>

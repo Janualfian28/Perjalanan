@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use App\models\Kota;
 use Illuminate\Http\Request;
 
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
+use App\Models\Village;
+
+// Get semua data
+
+
 
 class KotaController extends Controller
 {
@@ -15,8 +23,8 @@ class KotaController extends Controller
      */
     public function index()
     {
-        $data = Kota::all();
-        return view('kota.index',compact('data'));
+        $provinces = Province::all();
+        return view('kota.index',compact('provinces'));
     }
 
     /**
@@ -24,11 +32,39 @@ class KotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getkabupaten(request $request)
     {
-        //
+        $id_provinsi = $request->id_provinsi;
+
+        $kabupatens = Regency::where('province_id', $id_provinsi)->get();
+
+        foreach ($kabupatens as $kabupaten){
+            echo "<option value='$kabupaten->id'>$kabupaten->name</option>";
+        }
     }
 
+    public function getkecamatan(request $request)
+    {
+        $id_kabupaten = $request->id_kabupaten;
+
+        $kecamatans = District::where('regency_id', $id_kabupaten)->get();
+
+        foreach ($kecamatans as $kecamatan){
+            echo "<option value='$kecamatan->id'>$kecamatan->name</option>";
+        }
+    }
+
+
+    public function getdesa(request $request)
+    {
+        $id_kecamatan = $request->id_kecamatan;
+
+        $desas = Village::where('district_id', $id_kecamatan)->get();
+
+        foreach ($desas as $desa){
+            echo "<option value='$desa->id'>$desa->name</option>";
+        }
+    }
     /**
      * Store a newly created resource in storage.
      *

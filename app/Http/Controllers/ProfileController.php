@@ -89,7 +89,7 @@ class ProfileController extends Controller
             'telp'=>$request->telp,
             'username'=>$request->username,
             'email'=>$request->email,
-            'kota_id'=>$request->kota_id,
+            'alamat'=>$request->alamat,
         ];
 
         if($request->foto > 0 && isset($v_foto)){

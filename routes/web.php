@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/kota','KotaController@index')->name('kota');
+Route::post('/getkabupaten','KotaController@getkabupaten')->name('getkabupaten');
+Route::post('/getkecamatan','KotaController@getkecamatan')->name('getkecamatan');
+Route::post('/getdesa','KotaController@getdesa')->name('getdesa');
 
 
 Route::get('/login','AuthController@login')->name('login');
