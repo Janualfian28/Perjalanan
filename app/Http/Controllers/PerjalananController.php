@@ -90,8 +90,9 @@ class PerjalananController extends Controller
      * @param  \App\models\Perjalanan  $perjalanan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perjalanan $perjalanan)
+    public function destroy(Perjalanan $perjalanan,$id)
     {
-        //
+        Perjalanan::destroy($id);
+        return redirect('/perjalanan');
     }
 }

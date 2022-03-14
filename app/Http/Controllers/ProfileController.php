@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\models\Kota;
+use Auth;
 class ProfileController extends Controller
 {
     /**
@@ -12,11 +13,11 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         $kota = Kota::all();
-        $data = User::all();
-        return view('profile.profile',compact('data','kota'));
+        $data = User::where('user_id', Auth::user()->id);
+        return view('profile.copy',compact('data','kota'));
     }
 
     /**
@@ -103,7 +104,7 @@ class ProfileController extends Controller
         // dd($v_foto);
         $model->update($data);
 
-        return redirect("/profile/$id");
+        return redirect("/profile/index/$id");
     }
 
     /**

@@ -19,14 +19,12 @@ Route::get('/template', function () {
 });
 
 Route::get('/', function () {
-    return view('home');
+    return view('home2');
 });
 
-Route::get('/kota','KotaController@index')->name('kota');
-Route::post('/getkabupaten','KotaController@getkabupaten')->name('getkabupaten');
-Route::post('/getkecamatan','KotaController@getkecamatan')->name('getkecamatan');
-Route::post('/getdesa','KotaController@getdesa')->name('getdesa');
-
+Route::get('/home', function () {
+    return view('home2');
+});
 
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
@@ -37,11 +35,13 @@ Route::group(['middleware' => 'auth'],function(){
     
     Route::get('/kota','KotaController@index');
 
+    Route::get('/profile/index/{id}','ProfileController@index');
     Route::get('/profile/{id}','ProfileController@edit');
     Route::put('/profile/update/{id}','ProfileController@update');
 
     Route::get('/perjalanan','PerjalananController@index');
     Route::get('/perjalanan/create','PerjalananController@create');
     Route::post('/perjalanan/store','PerjalananController@store');
+    Route::get('/perjalanan/delete/{id}','PerjalananController@destroy');
 });
  
