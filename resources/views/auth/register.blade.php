@@ -23,17 +23,27 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
+                            @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+            
                             <h3 class="display-4">Register</h3>
                             <form action="/postregister" method="post">
 								@csrf
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="number" placeholder="NIK" name="nik" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="inputEmail" value="{{ old('nik') }}" type="number" placeholder="NIK" name="nik" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
 								<div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Username" name="username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="inputEmail" value="{{ old('username') }}" type="text" placeholder="Username" name="username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
 								<div class="form-group mb-3">
-                                    <input id="inputEmail" type="email" placeholder="Email" name="email" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="inputEmail" value="{{ old('email') }}" type="email" placeholder="Email" name="email" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
                                     <input id="inputPassword" type="password" placeholder="Password" name="password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">

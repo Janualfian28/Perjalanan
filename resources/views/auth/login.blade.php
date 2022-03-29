@@ -28,7 +28,7 @@
                             <form action="/postlogin" method="post">
 								@csrf
                                 <div class="form-group mb-3">
-                                    <input id="inputEmail" type="text" placeholder="Username" name="username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    <input id="inputEmail" value="{{ old('username') }}" type="text" placeholder="Username" name="username" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                 </div>
                                 <div class="form-group mb-3">
                                     <input id="inputPassword" type="password" placeholder="Password" name="password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">

@@ -6,14 +6,21 @@
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
+          @if( auth()->user()->role == 'admin' )
           <li class="nav-item">
-            <a class="nav-link fw-medium" href="/perjalanan">Home</a>
+            <a class="nav-link fw-medium" href="/datauser">Data User</a>
+          </li>
+          @endif
+          @if( auth()->user()->role == 'user' )
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="/perjalanan">Perjalanan</a>
           </li>
           <li class="nav-item" >
             <a class="nav-link fw-medium active" aria-current="page" href="/profile/index/{{ auth()->user()->id }}">Profile</a>
           </li>
+          @endif
           <li class="nav-item" >
-            <a class="nav-link fw-medium" href="/home">Logout</a>
+            <a class="nav-link fw-medium" href="/logout">Logout</a>
           </li>
         </ul>
       </div>

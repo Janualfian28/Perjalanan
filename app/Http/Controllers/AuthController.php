@@ -15,7 +15,7 @@ class AuthController extends Controller
 
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('username','password'))){
-            return redirect('/perjalanan');
+            return redirect('/dashboard');
         }
             return redirect('/login');
     }
@@ -25,21 +25,22 @@ class AuthController extends Controller
     }
 
     public function postregister(Request $request){
+
         $user = User::create([
-            'nik' => $request->nik,
+            'nik' => $request->nik ,
+            'role' => 'user',
             'username'=>$request->username,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
             'remember_token'=>str_random(60)
         ]);
 
-        Warga::create([
-            'user_id'=>$user->id,
-            'nik' => $request->nik,
-            'username'=> $request->username,
-            'email'=>$request->email,
-            'password'=> bcrypt($request->password)
-        ]);
+        return redirect('/login');
+    }
+
+
+    public function logout(){
+        Auth::logout();
         return redirect('/login');
     }
 }

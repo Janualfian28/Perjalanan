@@ -48,7 +48,7 @@
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
-              <li class="nav-item" data-anchor="data-anchor">
+              <li class="nav-item">
                 <a class="nav-link fw-medium active" aria-current="page" href="/register">Register</a>
               </li>
               <li class="nav-item">
@@ -93,9 +93,7 @@
             <div class="col-6 col-sm-4 col-md-4 col-lg-2 px-md-0 mb-5 mb-lg-0 text-center"><img src="{{asset('admin/img/gallery/company-1.png')}}" alt="" /></div>
           </div> --}}
         </div><!-- end of .container-->
-      </section>
-      
-      
+      </section>  
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
@@ -115,5 +113,4 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&amp;display=swap" rel="stylesheet">
   </body>
-
 </html>

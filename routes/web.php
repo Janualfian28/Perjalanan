@@ -30,8 +30,15 @@ Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin','AuthController@postlogin');
 Route::get('/register','AuthController@register');
 Route::post('/postregister','AuthController@postregister');
+Route::get('/logout','AuthController@logout');
+    
 
-Route::group(['middleware' => 'auth'],function(){
+
+Route::group(['middleware' => ['auth','prevent-back-history']],function(){
+    Route::get('/datauser','ProfileController@datauser');
+    Route::get('/cetak','ProfileController@cetakpdf');
+
+    Route::get('/dashboard','ProfileController@dashboard');
     
     Route::get('/kota','KotaController@index');
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\models\Kota;
 use Auth;
+use PDF;
 class ProfileController extends Controller
 {
     /**
@@ -18,6 +19,24 @@ class ProfileController extends Controller
         $kota = Kota::all();
         $data = User::where('user_id', Auth::user()->id);
         return view('profile.copy',compact('data','kota'));
+    }
+
+    public function datauser(){
+        $data = User::all();
+        return view('profile.datauser',compact('data'));
+    }
+
+    public function cetakPdf()
+    {
+    	$data = User::all();
+
+    	$pdf = PDF::loadview('profile.cetak-profile',compact('data'));
+    	return $pdf->stream();
+    }
+
+    public function dashboard()
+    {
+        return view('profile.dashboar');
     }
 
     /**
