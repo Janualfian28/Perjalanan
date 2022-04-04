@@ -32,11 +32,12 @@ Route::get('/register','AuthController@register');
 Route::post('/postregister','AuthController@postregister');
 Route::get('/logout','AuthController@logout');
     
-
-
-Route::group(['middleware' => ['auth','prevent-back-history']],function(){
+Route::group(['middleware' => ['auth', 'checkRole:admin','prevent-back-history']],function(){
     Route::get('/datauser','ProfileController@datauser');
     Route::get('/cetak','ProfileController@cetakpdf');
+});
+
+Route::group(['middleware' => ['auth','prevent-back-history']],function(){
 
     Route::get('/dashboard','ProfileController@dashboard');
     

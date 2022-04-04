@@ -24,7 +24,7 @@
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
                             <h3 class="display-4">Peduli Diri</h3>
-                            <p class="text-muted mb-4">Log In untuk melihat data perjalanan anda</p>
+                            <p class="text-muted mb-4">Masuk untuk melihat data perjalanan anda</p>
                             <form action="/postlogin" method="post">
 								@csrf
                                 <div class="form-group mb-3">
@@ -34,10 +34,9 @@
                                     <input id="inputPassword" type="password" placeholder="Password" name="password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
-                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
-                                    <label for="customCheck1" class="custom-control-label">Remember password</label>
+                                    <label for="customCheck1" class="custom-control-label">Belum punya akun? <a href="/register" >Daftar</a></label>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign In</button>
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Masuk</button>
                             </form>
                         </div>
                     </div>

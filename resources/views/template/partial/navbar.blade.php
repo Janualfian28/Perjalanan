@@ -7,7 +7,6 @@
                 <li class="nav-item px-2"><a class="nav-link" href="/profile">Profile</a></li>
                 <li class="nav-item px-2"><a class="nav-link" href="/logout">Logout</a></li>
             </ul>
-           
           </div>
         </div>
       </nav>
