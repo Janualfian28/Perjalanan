@@ -20,7 +20,7 @@
                     <div class="mt-3">
                       <h4>{{ auth()->user()->name }}</h4>
                       <p class="text-secondary mb-1">{{ auth()->user()->email }}</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                      <p class="text-muted font-size-sm">{{ auth()->user()->alamat }}</p>
                     </div>
                   </div>
                 </div>

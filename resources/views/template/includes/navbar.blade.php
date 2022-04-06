@@ -11,7 +11,7 @@
             <a class="nav-link fw-medium" href="/datauser">Data User</a>
           </li>
           @endif
-          @if( auth()->user()->role == 'user' )
+          @if( auth()->user()->role == 'user' || auth()->user()->role == 'admin')
           <li class="nav-item">
             <a class="nav-link fw-medium" href="/perjalanan">Perjalanan</a>
           </li>
