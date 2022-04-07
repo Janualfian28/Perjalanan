@@ -69,7 +69,7 @@
             <div class="col-md-7 col-lg-6 text-center text-md-start">
 
               <h1 class="mb-4 display-3 fw-bold lh-sm">SELAMAT DATANG <br class="d-block d-lg-none d-xl-block" />PEDULI DIRI</h1>
-              <p class="mt-3 mb-4 fs-1">Increase productivity with a simple to-do app. app for <br class="d-none d-lg-block" />managing your personal budgets.</p>
+              <p class="mt-3 mb-4 fs-1">Nikmati masa liburanmu detik demi detiknya <br class="d-none d-lg-block" />Sebelum kamu kembali ke aktivitas padatmu</p>
             </div>
           </div>
         </div>

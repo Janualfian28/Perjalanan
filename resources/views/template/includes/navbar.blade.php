@@ -6,6 +6,9 @@
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="/dashboard">Home</a>
+          </li>
           @if( auth()->user()->role == 'admin' )
           <li class="nav-item">
             <a class="nav-link fw-medium" href="/datauser">Data User</a>
